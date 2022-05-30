@@ -18,21 +18,23 @@ export default function Popup(props: PopupProps) {
   const [featureFlagsChecked, setFeatureFlagsChecked] = useState<FeatureFlagsDict>(props.featureFlags);
 
   const getListItems = (): ReactElement[] => {
-    const getItem = ([flag, isChecked]) => {
+    const getItem = ([flag,]: [string, boolean]) => {
+      const isChecked = featureFlagsChecked[flag];
+
       return (
 	<li key={flag}>
           <label>
-           {flag}
-          <input
+            {flag}
+            <input
              type="checkbox"
              checked={isChecked}
              onChange={handleFlagChange}
              value={flag}
-           />
-        </label>
+            />
+          </label>
 	</li>
       ); 
-    }
+    };
 
     return Object
       .entries(props.featureFlags)
@@ -51,7 +53,7 @@ export default function Popup(props: PopupProps) {
   const handleSubmit = (e) => {
     e.preventDefault();
     props.onSubmit(featureFlagValue);
-    setFeatureFlagValue("")
+    setFeatureFlagValue("");
   };
 
   const handleFeatureFlagsInputChange = (e) => {

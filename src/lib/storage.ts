@@ -25,10 +25,8 @@ export async function getFeatureFlags(): Promise<FeatureFlagsDict> {
 export async function setFeatureFlag(addedFlag: string, value: boolean): Promise<FeatureFlagsDict> {
   const featureFlags = await getFeatureFlags();
 
-  if (!featureFlags[addedFlag]) {
-    featureFlags[addedFlag] = value;
-    await chrome.storage.local.set({ [FLAGS_KEY] : featureFlags });
-  }
+  featureFlags[addedFlag] = value;
+  await chrome.storage.local.set({ [FLAGS_KEY] : featureFlags });
 
   return featureFlags;
 }

@@ -20,8 +20,9 @@ function set(url: string, name: string, rawValue: boolean): Promise<chrome.cooki
   return chrome.cookies.set({ url, name, value })
 }
 
-export async function syncFeatureFlags(url: string, featureFlags: Storage.FeatureFlagsDict) {
+export async function syncFeatureFlags(url: string, featureFlags: Storage.FeatureFlagsDict): Promise<boolean> {
   const featureFlagEntries = Object.entries(featureFlags);
+  let hasChanged = false;
 
   for (const [featureFlag, isEnabled] of featureFlagEntries) {
     const cookieEnabledValue = await get(url, featureFlag);
@@ -30,6 +31,9 @@ export async function syncFeatureFlags(url: string, featureFlags: Storage.Featur
       continue;
     }
 
+    hasChanged = true;
     set(url, featureFlag, isEnabled);
   }
+
+  return hasChanged;
 }

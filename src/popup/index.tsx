@@ -16,7 +16,9 @@ const PopupContainer = (props: { featureFlags: Storage.FeatureFlagsDict }) => {
   const handleFlagChange = (featureFlag: string, value: boolean) => {
     Storage
       .setFeatureFlag(featureFlag, value)
-      .then((updatedFeatureFlags) => setFeatureFlags(updatedFeatureFlags));
+      .then((updatedFeatureFlags) => {
+	setFeatureFlags(updatedFeatureFlags)
+      });
   };
 
   return (

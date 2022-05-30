@@ -2,10 +2,22 @@ import { getFeatureFlags } from "../lib/storage";
 import { syncFeatureFlags} from "../lib/cookies";
 
 async function syncChanges(tabId: number): Promise<void> {
-    const featureFlags = await getFeatureFlags();
-    const tab = await chrome.tabs.get(tabId);
+  const featureFlags = await getFeatureFlags();
+  console.log({ featureFlags })
+  const tab = await chrome.tabs.get(tabId);
 
-    syncFeatureFlags(tab.url, featureFlags);
+  const hasChanged = await syncFeatureFlags(tab.url, featureFlags);
+
+  if (!hasChanged) {
+    return;
+  }
+
+  await chrome.scripting.executeScript({
+    target: {tabId},
+    func: () => location.reload()
+  });
+
+  console.log({ hasChanged, updated: await getFeatureFlags() })
 }
 
 chrome.storage.onChanged.addListener(async (_, area) => {
