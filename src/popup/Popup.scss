@@ -1,0 +1,12 @@
+// Chrome applies an 8px margin by default (gross).
+body {
+    margin: 0px;
+}
+
+#popup {
+    margin: 1em;
+    align-items: left;
+    display: flex;
+    height: 80em;
+    width: 33em;
+}
