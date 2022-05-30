@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Chrome extension for setting flipper cookies",
   "scripts": {
+    "lint": "eslint ./src --fix",
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack --config webpack.dev.js",
     "watch": "webpack -w --config webpack.dev.js"
@@ -13,7 +14,11 @@
     "@types/chrome": "^0.0.188",
     "@types/react": "^16.9.32",
     "@types/react-dom": "^16.9.6",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
     "css-loader": "^3.4.2",
+    "eslint": "^8.16.0",
+    "eslint-plugin-react": "^7.30.0",
     "node-sass": "^7.0.1",
     "sass-loader": "^10.2.1",
     "style-loader": "^0.20.3",

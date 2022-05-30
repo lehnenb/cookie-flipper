@@ -3,9 +3,7 @@ import { syncFeatureFlags} from "../lib/cookies";
 
 async function syncChanges(tabId: number): Promise<void> {
     const featureFlags = await getFeatureFlags();
-    let tab = await chrome.tabs.get(tabId);
-
-    console.log({ featureFlags });
+    const tab = await chrome.tabs.get(tabId);
 
     syncFeatureFlags(tab.url, featureFlags);
 }
@@ -15,8 +13,8 @@ chrome.storage.onChanged.addListener(async (_, area) => {
     return;
   }
 
-  let queryOptions = { active: true, lastFocusedWindow: true };
-  let [tab] = await chrome.tabs.query(queryOptions);
+  const queryOptions = { active: true, lastFocusedWindow: true };
+  const [tab] = await chrome.tabs.query(queryOptions);
 
   tab.id && await syncChanges(tab.id);
 });

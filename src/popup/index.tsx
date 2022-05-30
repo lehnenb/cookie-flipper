@@ -30,7 +30,7 @@ const PopupContainer = (props: { featureFlags: Storage.FeatureFlagsDict }) => {
 
 chrome
   .tabs
-  .query({ active: true, currentWindow: true }, async (_) => {
+  .query({ active: true, currentWindow: true }, async () => {
     await Storage.setupFeatureFlagsStorage();
     const featureFlags = await Storage.getFeatureFlags();
 

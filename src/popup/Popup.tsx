@@ -18,25 +18,25 @@ export default function Popup(props: PopupProps) {
   const [featureFlagsChecked, setFeatureFlagsChecked] = useState<FeatureFlagsDict>(props.featureFlags);
 
   const getListItems = (): ReactElement[] => {
-    const getItem = ([flag, _]) => {
-      const isChecked = featureFlagsChecked[flag];
+    const getItem = ([flag, isChecked]) => {
       return (
 	<li key={flag}>
-	  <label>
-	    {flag}
-	    <input
-	      type="checkbox"
-	      checked={isChecked}
-	      onChange={handleFlagChange}
-	      value={flag}
-	    />
-	  </label>
+          <label>
+           {flag}
+          <input
+             type="checkbox"
+             checked={isChecked}
+             onChange={handleFlagChange}
+             value={flag}
+           />
+        </label>
 	</li>
       ); 
     }
 
     return Object
       .entries(props.featureFlags)
+      .sort(([a,], [b,]) => a.localeCompare(b))
       .map(getItem);
   };
 
@@ -67,8 +67,6 @@ export default function Popup(props: PopupProps) {
   } else {
     listContents = (<span>No feature flags added to the list</span>) 
   }
-
-  console.log({props});
 
   return (
     <div id="feature-flags">

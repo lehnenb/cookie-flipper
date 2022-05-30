@@ -4,12 +4,12 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "jsx": "react",
-    "lib": ["es2015", "dom"],
+    "lib": ["es2020", "dom"],
     "module": "commonjs",
     "moduleResolution": "node",
     "outDir": "dist/js",
     "rootDir": "src",
     "sourceMap": true,
-    "target": "es5"
+    "target": "es6"
   }
 }
