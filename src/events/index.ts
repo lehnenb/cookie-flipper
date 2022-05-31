@@ -3,7 +3,6 @@ import { syncFeatureFlags} from "../lib/cookies";
 
 async function syncChanges(tabId: number): Promise<void> {
   const featureFlags = await getFeatureFlags();
-  console.log({ featureFlags })
   const tab = await chrome.tabs.get(tabId);
 
   const hasChanged = await syncFeatureFlags(tab.url, featureFlags);
@@ -16,8 +15,6 @@ async function syncChanges(tabId: number): Promise<void> {
     target: {tabId},
     func: () => location.reload()
   });
-
-  console.log({ hasChanged, updated: await getFeatureFlags() })
 }
 
 chrome.storage.onChanged.addListener(async (_, area) => {
