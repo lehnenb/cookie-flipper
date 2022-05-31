@@ -19,9 +19,9 @@
         "storage",
         "tabs",
         "scripting",
-	"cookies"
+	    "cookies"
     ],
     "host_permissions": [
-        "*://*/"
+        "https://staging-beta.on-running.com/"
     ]
 }
