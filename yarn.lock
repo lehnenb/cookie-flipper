@@ -52,6 +52,18 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@popperjs/core@^2.9.2":
+  version "2.11.5"
+  resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.5.tgz#db5a11bf66bdab39569719555b0f76e138d7bd64"
+  integrity sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==
+
+"@types/bootstrap@^5.1.12":
+  version "5.1.12"
+  resolved "https://registry.yarnpkg.com/@types/bootstrap/-/bootstrap-5.1.12.tgz#4d704f6385fda2f1a56cc458f1f4cafab6e9f7e3"
+  integrity sha512-pSS5BGEgepwzdbsBGswBWFmgrnYpp7c4UfuYe1FJWwkrcjm/JVwfG4gBkOYtd92Otd3RdJK0ByBWMkBROfLEPw==
+  dependencies:
+    "@popperjs/core" "^2.9.2"
+
 "@types/chrome@^0.0.188":
   version "0.0.188"
   resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.188.tgz#ed73feca28a6d84f796ec50a2dbe7e41510175b3"
@@ -571,6 +583,11 @@ bn.js@^5.0.0, bn.js@^5.1.1:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-5.2.1.tgz#0bc527a6a0d18d0aa8d5b0538ce4a77dccfa7b70"
   integrity sha512-eXRvHzWyYPBuB4NBy0cmYQjGitUrtqwbvlzP3G6VFnNRbsZQIxQ10PbKKHt8gZ/HW/D/747aDl+QkDqg3KQLMQ==
+
+bootstrap@5.2.0-beta1:
+  version "5.2.0-beta1"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.2.0-beta1.tgz#75647ff7327c2cac9b8e1cb6728a790a5be4cefc"
+  integrity sha512-6qbgs177WZEFY4SLQUq3tEHayYG80nfDmyTpdKi0MJqRMdS+HAoq24+YKfx6wf+nHY0rx8zrh477J1lFu4WzOA==
 
 brace-expansion@^1.1.7:
   version "1.1.11"

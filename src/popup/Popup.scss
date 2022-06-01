@@ -1,4 +1,6 @@
 // Chrome applies an 8px margin by default (gross).
+@import "~bootstrap/scss/bootstrap";
+
 body {
     margin: 0px;
 }
@@ -8,5 +10,5 @@ body {
     align-items: left;
     display: flex;
     height: 80em;
-    width: 33em;
+    width: 20em;
 }

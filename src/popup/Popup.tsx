@@ -22,17 +22,17 @@ export default function Popup(props: PopupProps) {
       const isChecked = featureFlagsChecked[flag];
 
       return (
-	<li key={flag}>
-          <label>
-            {flag}
-            <input
-             type="checkbox"
-             checked={isChecked}
-             onChange={handleFlagChange}
-             value={flag}
-            />
-          </label>
-	</li>
+        <li key={flag} className="form-check form-switch">
+          <input
+            type="checkbox"
+            checked={isChecked}
+            role="switch"
+            onChange={handleFlagChange}
+            className="form-check-input"
+            value={flag}
+          />
+          <label>{flag}</label>
+        </li>
       ); 
     };
 
@@ -72,21 +72,41 @@ export default function Popup(props: PopupProps) {
 
   return (
     <div id="feature-flags">
-      <form onSubmit={handleSubmit}>
-        <label>
-            Feature flag:
+      <div className="title">
+        <h1>On Flipper Cookies</h1>
+      </div>
+
+      <hr />
+
+      <div className="mb-3">
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label><b>Feature Flag</b></label>
             <input 
+              style={{marginTop: "10px" }}
               required
               value={featureFlagValue}
               onChange={handleFeatureFlagsInputChange}
+              placeholder="add new feature flag"
               id="feature-flags-input" 
+              className="form-control"
               type="text" 
             />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+          </div>
 
-      {listContents}
+          <div style={{marginTop: "10px" }}>
+            <button type="submit" className="btn btn-primary">Submit</button>
+          </div>
+
+        </form>
+      </div>
+
+      <hr />
+
+      <div className="mb-3">
+        <h3>Added flags</h3>
+        <ul style={{margin: 0, padding: 0}}>{listContents}</ul>
+      </div>
     </div>
   );
 }
