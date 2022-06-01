@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "On Flipping Cookies",
+    "name": "On Cookie Flipper",
     "description": "Keeps flipper cookies synced in the front-end",
     "version": "1.0.0",
     "action": {

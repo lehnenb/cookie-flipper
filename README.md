@@ -1,7 +1,8 @@
-# On Flipping Cookies
+# On's Little Cookie Flipper
 
-Chrome extension used to set cookies for on developers
+Wee Chrome extension used for setting cookies.
 
+![Alt Text](https://media1.giphy.com/media/bAlYQOugzX9sY/giphy.gif?cid=ecf05e479x5d1ea9pt8xj47p8ehiwwvbjkf4hhz2dm5a09uv&rid=giphy.gif&ct=g)
 
 ## Instructions
 
