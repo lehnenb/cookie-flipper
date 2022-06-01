@@ -1,5 +1,7 @@
 import * as Storage from './storage';
 
+const BASE_ON_DOMAIN = '.on-running.com';
+
 function parseCookieValue(flag: string) {
   return flag === "true";
 }
@@ -15,15 +17,16 @@ async function get(url: string, name: string): Promise<boolean> {
 }
 
 function set(url: string, name: string, rawValue: boolean): Promise<chrome.cookies.Cookie> {
-  const value = encodeCookieValue(rawValue);
-  
+  const value = encodeCookieValue(rawValue); 
+  const domain = (url.indexOf(BASE_ON_DOMAIN) !== -1) ? BASE_ON_DOMAIN : null;
+
   return chrome.cookies.set({ 
       url,
       name,
       value,
+      domain,
       expirationDate: (new Date().getTime() / 1000)  + 157680000, // five years from now
       path: '/',
-      domain: '.on-running.com'
   })
 }
 

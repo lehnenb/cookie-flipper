@@ -22,6 +22,8 @@
 	    "cookies"
     ],
     "host_permissions": [
+        "*://localhost/",
+        "*://127.0.0.1/",
         "https://staging-beta.on-running.com/",
         "https://staging-customer-service.on-running.com/",
         "https://shop-staging.on-running.com/",
