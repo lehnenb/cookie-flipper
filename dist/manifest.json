@@ -19,7 +19,7 @@
         "storage",
         "tabs",
         "scripting",
-	    "cookies"
+        "cookies"
     ],
     "host_permissions": [
         "*://localhost/",
