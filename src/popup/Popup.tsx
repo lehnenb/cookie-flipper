@@ -73,7 +73,7 @@ export default function Popup(props: PopupProps) {
   return (
     <div id="feature-flags">
       <div className="title">
-        <h1>On Flipper Cookies</h1>
+        <h1>On's Little Cookie Flipper</h1>
       </div>
 
       <hr />
