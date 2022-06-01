@@ -17,7 +17,14 @@ async function get(url: string, name: string): Promise<boolean> {
 function set(url: string, name: string, rawValue: boolean): Promise<chrome.cookies.Cookie> {
   const value = encodeCookieValue(rawValue);
   
-  return chrome.cookies.set({ url, name, value })
+  return chrome.cookies.set({ 
+      url,
+      name,
+      value,
+      expirationDate: (new Date().getTime() / 1000)  + 157680000, // five years from now
+      path: '/',
+      domain: '.on-running.com'
+  })
 }
 
 export async function syncFeatureFlags(url: string, featureFlags: Storage.FeatureFlagsDict): Promise<boolean> {
