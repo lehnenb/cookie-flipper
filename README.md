@@ -1,4 +1,4 @@
-# On's Little Cookie Flipper
+Little Cookie Flipper
 
 Wee Chrome extension used for setting cookies.
 
